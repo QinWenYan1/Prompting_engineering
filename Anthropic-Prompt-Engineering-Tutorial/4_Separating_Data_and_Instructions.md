@@ -16,23 +16,21 @@
 <a id="id1"></a>
 ## ✅ 知识点1: 提示模板与变量替换
 
-**理论**
-- 很多时候不需要每次都写完整提示，而是使用**提示模板**(`Prompt Template`)，提交相同任务但每次换不同数据
+**传统提示词的问题...**
+- 很多时候，我们并不想写完整的提示，而是想要**提示模板**
+   - 这些模板可以在提交给 Claude 之前，通过额外的输入数据进行修改
+   - 如果你希望 Claude 每次都做同样的事情，但任务所用的数据每次可能不同，这就派上用场了
+
+- **提示模板**(`Prompt Template`)：变量用 `{{双花括号}}` 包裹，命名应**具体且相关**（如 `{{ANIMAL}}` 而非 `{{X}}`）
 - 做法：将提示的**固定骨架**与**可变用户输入**分离，在发送前替换变量
-- 变量用 `{{双花括号}}` 包裹，命名应**具体且相关**（如 `{{ANIMAL}}` 而非 `{{X}}`）
+> 📋 术语提醒：`Prompt Template(提示模板)` = 固定结构 + 可替换变量
 
-**教材示例**
-```
-模板: "User: I will tell you the name of an animal. Please respond with 
-       the noise that animal makes. {{ANIMAL}}"
-输入: Cow
-替换后: "User: I will tell you the name of an animal. Please respond with 
-        the noise that animal makes. Cow"
-```
 
-**注意点**
-- 💡 模板让第三方用户只需填写变量，无需查看完整提示——适合产品化
-- 📋 术语提醒：`Prompt Template(提示模板)` = 固定结构 + 可替换变量
+- **教材示例**
+       ![alt text](images/11.png)
+
+
+> 💡 模板让第三方用户只需填写变量，无需查看完整提示——适合产品化
 
 ---
 
