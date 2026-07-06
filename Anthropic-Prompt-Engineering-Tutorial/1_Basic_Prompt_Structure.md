@@ -51,7 +51,7 @@
 ## ✅ 知识点3: User/Assistant 消息交替规则
 
 **使用 api 也有规则...**
-- `CLAUDEMESSAGES()` 要求提示严格遵守 Messages API 的消息格式：
+- `CLAUDEMESSAGES()` 要求 `User`，`Assistant` 提示严格遵守 Messages API 的消息格式：
 
   1. **消息必须以 "User:" 开头** — 第一条消息必须是 User 角色
   2. **User 和 Assistant 消息必须交替出现** — 不能连续两个同角色
@@ -104,7 +104,7 @@
 <a id="id4"></a>
 ## ✅ 知识点4: 常见格式错误与检查
 
-**我们常见的三种典型错误...**
+**我们常见的三种 `User/Assistant`交互典型错误...**
 
 - **缺少 `User:`**: 提示必须以 `User:` 开头 
   ![alt text](images/1.png)
@@ -123,25 +123,17 @@
 <a id="id5"></a>
 ## ✅ 知识点5: 系统提示 (System Prompt)
 
-**理论**
-- 系统提示用于在 User 回合**之前**向 Claude 提供上下文、指令和指导
-- 在 `CLAUDEMESSAGES()` 中作为**独立的 "system" 参数**传入，与 User/Assistant 消息列表分开
+**系统提示词 `system` 又长什么样子呢?**
+- 系统提示用于在 `User` 回合**之前**向 Claude 提供上下文、指令和指导
+- 在 `CLAUDEMESSAGES()` 中作为**独立的 "system" 参数**传入，与 `User/Assistant` 消息列表分开
 - 精心编写的系统提示可以增强 Claude 遵循规则和指令的能力
 
-**教材示例**
-```
-系统提示：
-"Your answer should always be a series of critical thinking questions 
-that further the conversation. Do not actually answer the user question."
-
-提示：
-User: Why is the sky blue?
-```
+- **教材示例**
+![alt text](images/4.png)
 Claude 不会直接回答「为什么天空是蓝的」，而是提出一系列批判性思考问题来推进对话。
 
-**注意点**
-- 💡 **理解技巧**：系统提示是「幕后导演」——用户看不到它，但它影响每一次回复
-- 🔄 **知识关联**：Ch3（角色分配）、Ch4（数据指令分离）会深入使用系统提示
+> 💡 **理解技巧**：系统提示是「幕后导演」——用户看不到它，但它影响每一次回复
+
 
 ---
 
