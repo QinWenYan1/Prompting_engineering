@@ -31,49 +31,44 @@
 <a id="id2"></a>
 ## ✅ 知识点2: 分步论证——电影评论情感分析
 
-**理论**
 一个精心设计的示例：
 
-**评论原文**：
-> 这部电影以其清新和原创性震撼了我。完全无关的是，我从1900年起就一直住在石头底下。
+- **评论原文**：
+   ![alt text](images/18.png)
 
 - 人类能看出第一句是正面评价，第二句似乎在说「我没看过别的电影所以没什么参考价值」
-- Claud 过于字面地理解「完全无关的」这个说法
+- Claude 过于字面地理解「完全无关的」这个说法
 
-**改进方案**：角色提示 + 分步论证
-```
-系统提示: "You are a keen-eyed reader of movie reviews."
-提示: "Is this review positive or negative? First, write the best argument 
-       for each side in <positive-argument> and <negative-argument> XML tags, 
-       then answer."
-```
+- **改进方案**：
+    - 角色提示 + 分步论证
+    - 让我们**允许 Claude 在作答之前先把事情想清楚**。我们通过**明确列出 Claude 应该采取的步骤**来实现这一点，以便它处理和思考自己的任务。再加上一点角色提示，这能让 Claude 更深入地理解这份评论
 
-**注意点**
-- 💡 分步论证 = 先强迫 Claude 从正反两面看问题，再综合判断——避免「先入为主」
-- 🔄 **知识关联**：结合 Ch3（角色提示）+ Ch4（XML 标签）+ 本章（逐步思考）= 效果叠加
+       ![alt text](images/19.png)
+
+>💡 分步论证 = 先强迫 Claude 从正反两面看问题，再综合判断——避免「先入为主」
+
 
 ---
 
 <a id="id3"></a>
 ## ✅ 知识点3: Claude 的顺序敏感性
 
-**理论**
-教程发现了一个重要现象：
-> "Claude is sometimes sensitive to order. In most cases (though not all), Claude is biased towards choosing the second of two options."
+**发现了一个重要现象**：
 
+- Claude 有时对顺序十分敏感
 - 当把 `<negative-argument>` 放在 `<positive-argument>` 前面时，Claude 的整体评估变成了正面
 - **Claude 更倾向于选择两个选项中的第二个**，可能是因为训练数据中第二个选项更可能是正确答案
-
-**注意点**
-- ⚠️ **关键区分**：顺序敏感性是真实存在的陷阱——如果你先列出坏选项再列出好选项，Claude 可能更倾向于后者
-- 💡 **应对策略**：如果结果对顺序敏感，可以多次运行交换顺序后对比，或让 Claude 先列出所有选项再做判断
+    ![alt text](images/20.png)
+- 这种对顺序敏感的性质极有可能是由于训练集数据来自于网络，这些数据里第二个选项更可能是正确的
+>💡 **应对策略**：如果结果对顺序敏感，可以多次运行交换顺序后对比，或让 Claude 先列出所有选项再做判断
 
 ---
 
 <a id="id4"></a>
 ## ✅ 知识点4: 思考让错误变正确——演员示例
 
-**理论**
+**思考使大模型进步...**
+- 通过思考来让 Claude 修正回复是大多数
 
 | 版本 | 提示 | 结果 |
 |------|------|------|
@@ -101,8 +96,4 @@ then give your answer.
 3. Claude 对选项顺序敏感——倾向于选第二个
 4. 一个简单的 `<brainstorm>` 标签就能让 Claude 从错误变正确
 
-## 📌 考试速记版
-- **核心公式**：`First, do X in <tag> tags, then answer.`
-- **关键技术**：`<brainstorm>` 标签 → 先思考再回答
-- **陷阱**：顺序敏感——Claude 偏好第二个选项
-- **原则**：思考必须外显 = 必须写在输出中
+---
