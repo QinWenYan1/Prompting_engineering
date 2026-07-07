@@ -8,8 +8,7 @@
 
 - [*知识点1: 复杂提示的 10 大要素框架*](#id1)
 - [*知识点2: 法律服务实战：宠物飓风法案例*](#id2)
-- [*知识点3: 金融服务实战：税务条款解析*](#id3)
-- [*知识点4: 提示工程的方法论*](#id4)
+- [*知识点3: 提示工程的方法论*](#id4)
 
 ---
 
@@ -53,81 +52,73 @@
 <a id="id2"></a>
 ## ✅ 知识点2: 法律服务实战：宠物飓风法案例
 
-**理论**
-完整法律服务提示模板：
+**下面来看一个完整例子...**
+- 下面，我们详细列出了一个**法律用例**的示例提示，其中我们让 Claude 回答关于某个法律问题的提问。（我们建议你**先到最底部**，了解我们要让 Claude 处理哪些输入，然后再研究我们写的提示）。我们调整了其中一些元素的顺序，以展示**提示结构是可以灵活变通的**！
 
-```
-User: You are an expert lawyer.                             ← 要素2: 任务上下文
+- 提示工程讲究的是**科学的反复试验**。我们鼓励你混搭、调换位置（那些顺序不重要的元素），然后找出**最适合你和你的需求**的方式。
 
-Here is some research that's been compiled.                 ← 要素4: 输入数据
-<legal_research>
-{{LEGAL_RESEARCH}}
-</legal_research>
+    ![alt text](images/40.png)
+    ![alt text](images/41.png)
+    ![alt text](images/42.png)
 
-<examples>                                                   ← 要素5: 示例
-<example>
-The statute of limitations expires after 10 years. [3].
-</example>
-</examples>
+- **输入变量**：
+    - `{{QUESTION}}` = "Are there any laws about what to do with pets during a hurricane?"
+    - `{{LEGAL_RESEARCH}}` = 3 条搜索结果（动物健康专利诉讼、兽医牙科执业、Katrina 飓风后宠物疏散立法）
 
-Write a clear, concise answer to this question:             ← 要素6: 任务描述与规则
-<question>{{QUESTION}}</question>
-If there is not sufficient information, write 
-"Sorry, I do not have sufficient information..."
+> 💡 这个模板展示了**工厂流水线**式的提示设计——固定框架 + 可变输入 + 引用格式规范
+> ⚠️ 长文档时最佳实践是将问题放在文档**底部**，但教程为可读性将问题放在了顶部
 
-Before you answer, pull out the most relevant quotes        ← 要素8: 逐步思考
-in <relevant_quotes> tags.
+- Claude 回复：
+    ```txt
+    """In 2006, Hawaii, Louisiana, and New Hampshire all enacted laws that address issues regarding the 
+    care of animals during disasters, such as providing shelters for pets and allowing service animals 
+    to be kept with the people they serve. In addition, Congress passed, and the President signed, 
+    the Pet Evacuation and Transportation Standards Act during 2006, which requires state and local 
+    emergency preparedness authorities to include in their evacuation plans information on how they 
+    will accommodate household pets and service animals in case of a disaster."" [3]
+    ""California passed a law that will require its Office of Emergency Services, Department of Agriculture, 
+    and other agencies involved with disaster response preparation to develop a plan for the needs of 
+    service animals, livestock, equids, and household pets in the event of a disaster or major emergency."" [3]
+    </relevant_quotes>
 
-Put your response in <answer> tags.                         ← 要素9: 输出格式
-Assistant: <relevant_quotes>                                ← 要素10: 预填充
-```
+    <answer>
+    The research indicates that there are several laws in place regarding the treatment of pets
+     during natural disasters like hurricanes. In 2006, several states, including Hawaii, Louisiana, 
+     and New Hampshire, enacted laws that require shelters to accommodate pets and allow service animals 
+     to remain with their owners during evacuations. [3] Additionally, the federal government passed 
+     the Pet Evacuation and Transportation Standards Act in 2006, which mandates that state and local 
+     emergency preparedness authorities include plans for accommodating household pets and service animals 
+     in their disaster response plans. [3] California has also passed a law requiring state agencies to 
+     develop plans for addressing the needs of pets, livestock, and other animals during emergencies. [3]
 
-**输入变量**：
-- `{{QUESTION}}` = "Are there any laws about what to do with pets during a hurricane?"
-- `{{LEGAL_RESEARCH}}` = 3 条搜索结果（动物健康专利诉讼、兽医牙科执业、Katrina 飓风后宠物疏散立法）
+    In summary, there are now various laws in place that require emergency authorities to make provisions 
+    for the care and evacuation of pets during natural disasters like hurricanes.
+    </answer>"
 
-**注意点**
-- 💡 这个模板展示了**工厂流水线**式的提示设计——固定框架 + 可变输入 + 引用格式规范
-- ⚠️ 长文档时最佳实践是将问题放在文档**底部**，但教程为可读性将问题放在了顶部
 
----
-
-<a id="id3"></a>
-## ✅ 知识点3: 金融服务实战：税务条款解析
-
-**理论**
-- 金融服务是**练习**（Exercises），要求学习者根据同样的 10 要素框架自己构建提示
-- 场景：分析美国《国内收入法典》第 83 条（Section 83），回答 "How long do I have to make an 83b election?"
-- 正确答案：**30 天内**（Section 83(b)(2) 规定选举须在转让后 30 天内作出）
-- 输入数据是一份完整的税法条款文本（约数千词），Claude 需要从中提取一句话的答案
-
-**注意点**
-- 💡 这个练习的核心挑战是**从长文本中找精确答案**——结合了 Ch4（XML分隔）、Ch6（逐步思考）、Ch7（示例引导）、Ch8（证据先行）
-- 🔄 金融场景展现的是**结构化信息的精确提取**，而法律场景展现的是**多源信息的综合分析**——两个行业对提示设计的侧重点不同
+    ```
 
 ---
 
 <a id="id4"></a>
-## ✅ 知识点4: 提示工程的方法论
+## ✅ 知识点3: 提示工程的方法论
 
-**理论**
-教程在结尾提供了 8 条后续学习路径：
+**教程在结尾提供了 8 条后续学习路径**：
 
 1. 📚 从 [Anthropic Cookbook](https://docs.anthropic.com) 学习生产级提示词示例
-2. 📖 阅读 Anthropic 提示指南
-3. 💡 查看 Prompt Library 获取灵感
-4. 🤖 尝试 Metaprompt——让 Claude 为你写提示模板
-5. 💬 在 Discord 服务器中提问
-6. ⚙️ 了解 API 参数：temperature、max_tokens 等
-7. 📄 阅读提示工程学术论文
+2. 📖 阅读 [Anthropic 提示指南](https://docs.anthropic.com/claude/docs/prompt-engineering)
+3. 💡 查看 [Prompt Library](https://anthropic.com/prompts) 获取灵感
+4. 🤖 尝试 [Metaprompt](https://docs.anthropic.com/claude/docs/helper-metaprompt-experimental) ——让 Claude 为你写提示模板
+5. 💬 在 [Discord](https://anthropic.com/discord) 服务器中提问
+6. ⚙️ 了解 [API](https://anthropic.com/discord) 参数：temperature、max_tokens 等
+7. 📄 阅读提示工程[学术论文](https://www.promptingguide.ai/papers)
 8. 🛠️ 练习构建提示词，让 Claude 做你感兴趣的事
 
-教程结语：
-> "如果你完成了所有练习，你已跻身顶尖 0.1% 的 LLM 驾驭者。提示工程是一门新兴学科，保持开放心态——**你完全有可能发现下一个伟大的提示技巧。**"
+- 教程结语：
+    > "如果你完成了所有练习，你已跻身顶尖 0.1% 的 LLM 驾驭者。提示工程是一门新兴学科，保持开放心态——**你完全有可能发现下一个伟大的提示技巧。**"
 
-**注意点**
-- 💡 **核心方法论**：提示工程不是死记硬背——从逐步思考到角色分配到使用示例再到清晰写作，这些技巧可以**被融合、重组并以无数方式改编**
-- 🔄 **关键建议**：为大型复杂提示开发测试用例，尝试多种结构——很少是纯粹公式化的
+> 💡 **核心方法论**：提示工程不是死记硬背——从逐步思考到角色分配到使用示例再到清晰写作，这些技巧可以**被融合、重组并以无数方式改编**
+
 
 ---
 
