@@ -21,7 +21,7 @@
 6. [逐步思考](./6_Thinking_Step_by_Step.md) — 思维链、逐步推理引导
 7. [使用示例](./7_Few_Shot_Prompting.md) — 少样本提示、输入输出对
 8. [避免幻觉](./8_Avoiding_Hallucinations.md) — 幻觉成因、Temperature 参数、事实性约束
-9. [从零构建复杂提示](./9_Complex_Prompts.md) — 聊天机器人、法律服务、金融服务实战
+9. [从零构建复杂提示](./9_Complex_Prompts.md) — 聊天机器人、法律服务
 
 ### 附录
 
