@@ -31,11 +31,11 @@
         ![alt text](images/31.png)
     3. **语气上下文**  (可选) 告知 Claude 应使用的语气：
         ![alt text](images/32.png)
-    4. **输入数据（XML标签包裹）** (可选) 需要处理的数据放入 `<tag>{{VARIABLE}}</tag>`：
+    4. **详细任务描述与规则** (必选) 展开任务要求，提供"退路"（不知道答案时怎么做）：
         ![alt text](images/33.png)
     5. **示例（Examples）** (强烈推荐) 至少一个理想回应的示例，用 `<example>` 标签包裹。**"示例可能是知识工作中让 Claude 按预期行为的最有效工具"**：
         ![alt text](images/34.png)
-    6. **详细任务描述与规则** (必选) 展开任务要求，提供"退路"（不知道答案时怎么做）：
+    6. **输入数据（XML标签包裹）** (可选) 需要处理的数据放入 `<tag>{{VARIABLE}}</tag>`：
         ![alt text](images/35.png)
     7. **即时任务描述** (推荐) 在长提示末尾"提醒"Claude 当前要做什么：
          ![alt text](images/36.png)
