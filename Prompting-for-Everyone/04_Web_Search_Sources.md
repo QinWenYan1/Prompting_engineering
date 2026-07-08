@@ -88,7 +88,7 @@
 <a id="id4"></a>
 ## ✅ 知识点4: Deep Research 
 
-**AI 模型在小检索范围有强大功能：深度研究（Deep Research）**
+**AI 还有一个强大功能：深度研究（Deep Research）**
 
 - 特征：
      - AI 模型具备一种更深入的研究能力，叫做 Deep Research。
