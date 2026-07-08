@@ -14,34 +14,34 @@
 
 ## 🧠 本课核心
 
-写作占 ChatGPT 所有使用场景的 **24%**，排名第一。但 AI 直接生成的文本往往是「AI slop」——看起来不错，仔细读空洞无物。本课教你**渐进式大纲法（Progressive Outlining）**：不从成稿开始，从大纲开始，用最小的编辑成本撬动最大的效果。
+。本课教你**渐进式大纲法（Progressive Outlining）**：不从成稿开始，从大纲开始，用最小的编辑成本撬动最大的效果。
 
 ---
 
 <a id="id1"></a>
 ## ✅ 知识点1: AI Slop 是什么——以及为什么你应该避免它
 
-**AI Slop 的定义**
-> "AI 生成的内容，如果不仔细读看起来还不错，但实际缺乏实质。"
+**写作占 ChatGPT 所有使用场景的 24%，排名第一。但 AI 直接生成的文本往往是「AI slop」**
 
-**识别 AI Slop 的信号**
+- **AI Slop 的定义**：AI 生成的内容，如果不仔细读看起来还不错，但实际缺乏实质。
 
-| 特征 | 例子 |
-|------|------|
-| 长破折号泛滥 | ChatGPT 发布后，Blue Sky 上 em dash 使用率持续上升 |
-| 空洞的「金句」 | "But it does change everything." — 听起来很重要，其实什么都没说 |
-| 过度使用某些词 | `nuanced`、`delve` |
-| 三元素列表 | 几乎每段都是「A, B, and C」 |
-| 「not X but Y」句式 | "it's not about infrastructure, it's about architecture" |
-| 形容词堆砌 | "a robustly structured and highly insightful paper" |
+- **识别 AI Slop 的信号**
 
-**惊人的数据**
-- **40% 的美国员工**在过去一个月中收到过 AI 生成的「工作垃圾」（workslop）
-- 人类已经开始被 AI 反向影响——播客和演讲中 `delve` 的使用频率明显上升
+    | 特征 | 例子 |
+    |------|------|
+    | **长破折号泛滥** | ChatGPT 发布后，Blue Sky 上 em dash（-） 使用率持续上升 |
+    | **空洞的「金句」** | "But it does change everything." — 听起来很重要，其实什么都没说 |
+    | **过度使用某些词** | `nuanced`、`delve` |
+    | **三元素列表**| 几乎每段都是「A, B, and C」 |
+    | **"not X but Y"句式** | "it's not about infrastructure, it's about architecture" |
+    | **形容词堆砌** | "a robustly structured and highly insightful paper" |
 
-**注意点**
-- 💡 AI slop 的根本原因是**没有给 AI 足够的具体内容去写**——回到第 1 课的「给上下文」原则
-- 📋 写作类对话中约 **三分之二** 是在已有文本基础上进行的（而非从零开始），说明大多数人的真实需求是「改」而不是「写」
+- **惊人的数据**
+    - **40% 的美国员工**在过去一个月中收到过 AI 生成的「工作垃圾」（workslop）
+    - 人类已经开始被 AI 反向影响——播客和演讲中 `delve` 的使用频率明显上升
+
+> 💡 AI slop 的根本原因是**没有给 AI 足够的具体内容去写**——回到第 1 课的「给上下文」原则
+> 📋 写作类对话中约 **三分之二** 是在已有文本基础上进行的（而非从零开始），说明大多数人的真实需求是「改」而不是「写」
 
 ---
 
