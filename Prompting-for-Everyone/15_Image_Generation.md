@@ -51,7 +51,9 @@
 <a id="id2"></a>
 ## ✅ 知识点2: 掌握视觉艺术词汇——这是专家的秘密武器
 
-**视觉艺术词汇来描述风格**
+**可以用视觉艺术词汇来描述风格**
+
+- 图像生成的核心技能不是「会写 prompt」，而是**有词汇量来描述你想要的视觉风格**
 
 - **为什么艺术背景的人生成图像更厉害**：艺术爱好者和艺术史爱好者擅长图像 prompt 工程——因为他们有精准的描述语言
 
@@ -61,18 +63,16 @@
     | 「光线柔和」 | `golden hour lighting（黄金时刻光）`、`chiaroscuro（明暗对照法）` |
     | 「画面很有感觉」 | `ethereal（空灵的）`、`gritty（粗粝的）`、`surreal（超现实的）` |
 
-**快速学习法**
-1. 找一张你喜欢的 AI 生成图
-2. 上传给 AI，问「你会如何描述这张图？」
-3. 看 AI 用了什么词汇——**学会那些词，下次自己用**
+- **快速学习法**
+    1. 找一张你喜欢的 AI 生成图
+    2. 上传给 AI，问「你会如何描述这张图？」
+    3. 看 AI 用了什么词汇——**学会那些词，下次自己用**
 
-**案例：老照片修复**
-- 上传一张褪色的童年照片（Andrew 和弟弟、朋友）
-- Prompt: `remove the glare and the rough texture, and make it a more natural aspect ratio（去掉反光和粗糙纹理，调成更自然的比例）`
-- 用 Google NanoBanana 模型完成修复
+- **案例：老照片修复**
+    - 上传一张褪色的童年照片（Andrew 和弟弟、朋友）
+    - Prompt: `remove the glare and the rough texture, and make it a more natural aspect ratio（去掉反光和粗糙纹理，调成更自然的比例）`
+    - 用 Google NanoBanana 模型完成修复
 
-**注意点**
-- 💡 图像生成的核心技能不是「会写 prompt」，而是**有词汇量来描述你想要的视觉风格**
 
 ---
 
